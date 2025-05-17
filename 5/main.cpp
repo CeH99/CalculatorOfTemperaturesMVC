@@ -132,7 +132,7 @@ class FilterFactoryRegistry {
                     return factory(filterName);
                 }
             }
-            throw std::invalid_argument("Unknown filter: " + filterName);
+            throw std::invalid_argument("Unknown filter " + filterName);
         }
     
     private:
@@ -185,7 +185,14 @@ int main(int argc, char* argv[]) {
         });
     registry.register_factory("GT",
         [](const std::string& arg) {
-            int threshold = std::stoi(arg.substr(2));
+            int threshold;
+            try{
+                threshold = std::stoi(arg.substr(2));
+                }
+            catch(std::exception&){
+                    std::cerr << "Threshold got an argument, but it's not a number!" << std::endl;
+                    exit(1);
+                }
             return std::make_unique<GtFilter>(threshold);
         });
 

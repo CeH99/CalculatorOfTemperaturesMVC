@@ -1,2 +1,0 @@
-/home/user/Calculator/build/Desktop_Qt_6_9_1-Debug/appCalculator_autogen/include/../EWIEGA46WW/moc_calculatorcontroller.cpp.json
-/home/user/Calculator/build/Desktop_Qt_6_9_1-Debug/appCalculator_autogen/include/../EWIEGA46WW/moc_calculatormodel.cpp.json

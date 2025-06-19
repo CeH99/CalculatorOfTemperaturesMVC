@@ -9,8 +9,8 @@ private:
     double celsius_, fahrenheit_, kelvin_;
 
     Q_OBJECT
-    Q_PROPERTY(double celcius_ READ getCelcius WRITE setCelcius NOTIFY celsiusChanged)
-    Q_PROPERTY(double fahrenheit_ READ getCelcius WRITE setCelcius NOTIFY fahrenheitChanged)
+    Q_PROPERTY(double celsius_ READ getCelsius WRITE setCelsius NOTIFY celsiusChanged)
+    Q_PROPERTY(double fahrenheit_ READ getFahrenheit WRITE setFahrenheit NOTIFY fahrenheitChanged)
     Q_PROPERTY(double kelvin_ READ getKelvin WRITE setKelvin NOTIFY kelvinChanged)
 
 public:

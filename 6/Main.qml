@@ -43,6 +43,13 @@ Window {
                 validator: DoubleValidator {
                     bottom: -273.15
                     top: 9999
+                    locale: "C"
+                }
+
+                onTextChanged: {
+                    if (text.indexOf(",") !== -1) {
+                        text = text.replace(",", ".")
+                    }
                 }
 
                 onEditingFinished: {
@@ -75,6 +82,13 @@ Window {
                 validator: DoubleValidator {
                     bottom: -9999
                     top: 9999
+                    locale: "C"
+                }
+
+                onTextChanged: {
+                    if (text.indexOf(",") !== -1) {
+                        text = text.replace(",", ".")
+                    }
                 }
 
                 onEditingFinished: {
@@ -107,6 +121,13 @@ Window {
                 validator: DoubleValidator {
                     bottom: 0
                     top: 9999
+                    locale: "C"
+                }
+
+                onTextChanged: {
+                    if (text.indexOf(",") !== -1) {
+                        text = text.replace(",", ".")
+                    }
                 }
 
                 onEditingFinished: {

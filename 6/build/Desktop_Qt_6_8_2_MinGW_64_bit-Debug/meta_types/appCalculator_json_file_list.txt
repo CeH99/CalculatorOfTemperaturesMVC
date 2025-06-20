@@ -1,0 +1,2 @@
+S:/HomeWorks-Hillel/6/build/Desktop_Qt_6_8_2_MinGW_64_bit-Debug/appCalculator_autogen/include/../EWIEGA46WW/moc_calculatorcontroller.cpp.json
+S:/HomeWorks-Hillel/6/build/Desktop_Qt_6_8_2_MinGW_64_bit-Debug/appCalculator_autogen/include/../EWIEGA46WW/moc_calculatormodel.cpp.json

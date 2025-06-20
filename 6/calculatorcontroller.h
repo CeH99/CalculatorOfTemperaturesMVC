@@ -19,11 +19,9 @@ public:
     Q_INVOKABLE void   calculateCelsius(QString degree);
     Q_INVOKABLE void   calculateFahrenheit(QString degree);
     Q_INVOKABLE void   calculateKelvin(QString degree);
-
 private:
-    CalculatorModel* model_;
-    bool             in_run;
-
+    CalculatorModel*   model_;
+    bool               in_run_;
 };
 
 #endif // CALCULATORCONTROLLER_H

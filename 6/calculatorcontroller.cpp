@@ -27,7 +27,7 @@ void CalculatorController::setFahrenheit(QString degree)
     degree.replace(",", ".");
     double change = degree.toDouble(&ok);
 
-    if(ok && change >= -273.15 && change <= 9999) {
+    if(ok && change >= -9999 && change <= 9999) {
         this->model_->setFahrenheit(change);
     }
 }
@@ -38,7 +38,7 @@ void CalculatorController::setKelvin(QString degree)
     degree.replace(",", ".");
     double change = degree.toDouble(&ok);
 
-    if(ok && change >= -273.15 && change <= 9999) {
+    if(ok && change >= 0 && change <= 9999) {
         this->model_->setKelvin(change);
     }
 }

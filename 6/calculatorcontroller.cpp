@@ -6,15 +6,17 @@ CalculatorController::CalculatorController(CalculatorModel* model, QObject *pare
     model_->setCelsius(0);
     model_->setFahrenheit(32);
     model_->setKelvin(273.15);
+    in_run = false;
 }
 
 
 void CalculatorController::setCelsius(QString degree)
 {
     bool ok = false;
+    degree.replace(",", ".");
     double change = degree.toDouble(&ok);
 
-    if(ok) {
+    if(ok && change >= -273.15 && change <= 9999) {
         this->model_->setCelsius(change);
     }
 }
@@ -22,9 +24,10 @@ void CalculatorController::setCelsius(QString degree)
 void CalculatorController::setFahrenheit(QString degree)
 {
     bool ok = false;
+    degree.replace(",", ".");
     double change = degree.toDouble(&ok);
 
-    if(ok) {
+    if(ok && change >= -273.15 && change <= 9999) {
         this->model_->setFahrenheit(change);
     }
 }
@@ -32,42 +35,48 @@ void CalculatorController::setFahrenheit(QString degree)
 void CalculatorController::setKelvin(QString degree)
 {
     bool ok = false;
+    degree.replace(",", ".");
     double change = degree.toDouble(&ok);
 
-    if(ok) {
+    if(ok && change >= -273.15 && change <= 9999) {
         this->model_->setKelvin(change);
     }
 }
 
-void CalculatorController::calculateCelsius()
+void CalculatorController::calculateCelsius(QString degree)
 {
-    this->model_->setFahrenheit(this->model_->getCelsius() * 9/5 + 32);
-    this->model_->setKelvin(this->model_->getCelsius() + 273.15);
+    if(in_run)
+        return;
+
+    in_run = true;
+    this->setCelsius(degree);
+    this->model_->setFahrenheit(std::round((this->model_->getCelsius() * 9.0 / 5.0 + 32.0) * 100) / 100);
+    this->model_->setKelvin    (std::round((this->model_->getCelsius() + 273.15)            * 100) / 100);
+    in_run = false;
 }
 
-void CalculatorController::calculateFahrenheit()
+void CalculatorController::calculateFahrenheit(QString degree)
 {
-    this->model_->setCelsius((this->model_->getFahrenheit() - 32) * 5/9);
-    this->model_->setKelvin((this->model_->getFahrenheit() - 32) * 5/9 + 273.15);
+    if(in_run)
+        return;
+
+    in_run = true;
+    this->setFahrenheit(degree);
+    this->model_->setCelsius (std::round(((this->model_->getFahrenheit() - 32.0) * 5.0 / 9.0)        * 100) / 100);
+    this->model_->setKelvin  (std::round(((this->model_->getFahrenheit() - 32.0) * 5.0 / 9.0 + 273.15) * 100) / 100);
+    in_run = false;
 }
 
-void CalculatorController::calculateKelvin()
+void CalculatorController::calculateKelvin(QString degree)
 {
-    this->model_->setCelsius(this->model_->getKelvin() - 273.15);
-    this->model_->setFahrenheit((this->model_->getKelvin() - 273.15) * 9/5 + 32);
+    if(in_run)
+        return;
+
+    in_run = true;
+    this->setKelvin(degree);
+    this->model_->setCelsius   (std::round((this->model_->getKelvin() - 273.15)            * 100) / 100);
+    this->model_->setFahrenheit(std::round(((this->model_->getKelvin() - 273.15) * 9.0 / 5.0 + 32.0) * 100) / 100);
+    in_run = false;
 }
 
-double CalculatorController::getCelsius()
-{
-    return this->model_->getCelsius();
-}
 
-double CalculatorController::getFahrenheit()
-{
-    return this->model_->getFahrenheit();
-}
-
-double CalculatorController::getKelvin()
-{
-    return this->model_->getKelvin();
-}

@@ -8,23 +8,21 @@
 class CalculatorController : public QObject
 {
     Q_OBJECT
+
 public:
     explicit CalculatorController(CalculatorModel* model, QObject *parent = nullptr);
 
-    Q_INVOKABLE void   setCelsius(QString degree);
-    Q_INVOKABLE void   setFahrenheit(QString degree);
-    Q_INVOKABLE void   setKelvin(QString degree);
+    void               setCelsius(QString degree);
+    void               setFahrenheit(QString degree);
+    void               setKelvin(QString degree);
 
-    Q_INVOKABLE double getCelsius();
-    Q_INVOKABLE double getFahrenheit();
-    Q_INVOKABLE double getKelvin();
-
-    Q_INVOKABLE void   calculateCelsius();
-    Q_INVOKABLE void   calculateFahrenheit();
-    Q_INVOKABLE void   calculateKelvin();
+    Q_INVOKABLE void   calculateCelsius(QString degree);
+    Q_INVOKABLE void   calculateFahrenheit(QString degree);
+    Q_INVOKABLE void   calculateKelvin(QString degree);
 
 private:
     CalculatorModel* model_;
+    bool             in_run;
 
 };
 

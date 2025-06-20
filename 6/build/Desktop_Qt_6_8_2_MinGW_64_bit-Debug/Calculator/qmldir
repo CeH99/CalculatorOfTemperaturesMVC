@@ -1,5 +1,0 @@
-module Calculator
-typeinfo appCalculator.qmltypes
-prefer :/qt/qml/Calculator/
-Main 1.0 Main.qml
-

@@ -1,0 +1,161 @@
+[
+    {
+        "classes": [
+            {
+                "className": "CalculatorController",
+                "lineNumber": 8,
+                "methods": [
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "degree",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 0,
+                        "name": "calculateCelsius",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "degree",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 1,
+                        "name": "calculateFahrenheit",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "degree",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 2,
+                        "name": "calculateKelvin",
+                        "returnType": "void"
+                    }
+                ],
+                "object": true,
+                "qualifiedClassName": "CalculatorController",
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QObject"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "calculatorcontroller.h",
+        "outputRevision": 68
+    },
+    {
+        "classes": [
+            {
+                "className": "CalculatorModel",
+                "lineNumber": 6,
+                "object": true,
+                "properties": [
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 0,
+                        "name": "celsius_",
+                        "notify": "celsiusChanged",
+                        "read": "getCelsius",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "double",
+                        "user": false,
+                        "write": "setCelsius"
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 1,
+                        "name": "fahrenheit_",
+                        "notify": "fahrenheitChanged",
+                        "read": "getFahrenheit",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "double",
+                        "user": false,
+                        "write": "setFahrenheit"
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 2,
+                        "name": "kelvin_",
+                        "notify": "kelvinChanged",
+                        "read": "getKelvin",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "double",
+                        "user": false,
+                        "write": "setKelvin"
+                    }
+                ],
+                "qualifiedClassName": "CalculatorModel",
+                "signals": [
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "degree",
+                                "type": "double"
+                            }
+                        ],
+                        "index": 0,
+                        "name": "celsiusChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "degree",
+                                "type": "double"
+                            }
+                        ],
+                        "index": 1,
+                        "name": "fahrenheitChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "degree",
+                                "type": "double"
+                            }
+                        ],
+                        "index": 2,
+                        "name": "kelvinChanged",
+                        "returnType": "void"
+                    }
+                ],
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QObject"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "calculatormodel.h",
+        "outputRevision": 68
+    }
+]

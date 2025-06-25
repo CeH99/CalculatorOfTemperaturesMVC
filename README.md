@@ -22,9 +22,7 @@ CalculatorOfTemperaturesMVC/
 
 ## 🖥 Interface Preview
 
-![GUI Screenshot](screenshots/first.png)
-
-*Put a screenshot of your Qt window in the `images/` folder and name it `screenshot.png`.*
+![GUI Screenshot](screenshots/first.jpg)
 
 ## ⚙️ How to Run
 

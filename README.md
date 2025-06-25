@@ -22,7 +22,7 @@ CalculatorOfTemperaturesMVC/
 
 ## 🖥 Interface Preview
 
-![GUI Screenshot](screenshots/first.jpg)
+![GUI Screenshot](screenshots/first_.jpg)
 
 ## ⚙️ How to Run
 
